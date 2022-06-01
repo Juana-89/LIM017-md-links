@@ -4,7 +4,13 @@
   "engines": {
     "node": ">=14.x"
   },
+  "scripts": {
+    "test": "jest --coverage"
+  },
   "dependencies": {
     "@laboratoria/curriculum-parser": "github:Laboratoria/course-parser"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
   }
 }
