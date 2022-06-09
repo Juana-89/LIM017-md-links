@@ -5,12 +5,42 @@
     "node": ">=14.x"
   },
   "scripts": {
+    "start": "node src/index.js",
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@laboratoria/curriculum-parser": "github:Laboratoria/course-parser"
+    "@laboratoria/curriculum-parser": "github:Laboratoria/course-parser",
+    "colors": "^1.4.0",
+    "marked": "^4.0.16",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "jest": "^28.1.0"
-  }
+  },
+  "description": "Md-Links te ayudará a verificar si los links que estén en los archivos .md sirven o ya están invalidados.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "api.js",
+    "cli.js"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juana-89/LIM017-md-links.git"
+  },
+  "keywords": [
+    "md-links",
+    "mdlinks",
+    "links",
+    "Laboratoria"
+  ],
+  "author": "Juana LC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juana-89/LIM017-md-links/issues"
+  },
+  "homepage": "https://github.com/Juana-89/LIM017-md-links#readme"
 }

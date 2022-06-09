@@ -3,25 +3,25 @@ const mdLinks = (path, options) => {
     return new Promise ((resolve, reject) => {
         const route = absolutePath(path)
         if(!pathExists(route)){
-            reject('Path does not exist');
-        } else {
+        reject('No existe ubicación');
+        }else{
                 const validateMdFile= searchDirectoryWithFilesMD(route);
                 if (validateMdFile.length === 0 ){
-                    reject('There is no md files')
-                }
-                else{
-                    const linksResult = searchLinksInFilesMD(route);
-                    if(linksResult.length===0){
-                        reject('there is no links')
-                    }
-                    else{
-                            if(!(options.validate)){
-                                resolve(linksResult);
-                            } else {
-                                const statusLink = getLinksStatus(linksResult);
-                                resolve(statusLink);
-                            }
+                reject('No hay archivos MD')
+                }else{
+
+                const linksResult = searchLinksInFilesMD(route);
+                if(linksResult.length === 0){
+                reject('No hay links')
+                }else{
+
+                if(!(options.validate)){
+                resolve(linksResult);
+                }else {
+                const statusLink = getLinksStatus(linksResult);
+                resolve(statusLink);
                         }
+                    }
                 }
         }
     });
@@ -32,4 +32,4 @@ result
 .then((res)=> console.log(res))
 .catch((err) => console.log(err));
 
-module.exports= { mdLinks};
+module.exports= { mdLinks };
