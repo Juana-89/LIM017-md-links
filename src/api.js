@@ -80,11 +80,11 @@ const getLinksStatus = (links) => {
     .then((response) => {
            element.status = response.status,
            element.message = (response.status >= 200) && (response.status <= 399) ? 'Ok' : 'Fail';
-            return element;
+           return element;
           
         })
     .catch((error) => {
-        return {
+            return {
             href: element.href,
             text: element.text,
             file: element.file,

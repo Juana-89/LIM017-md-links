@@ -1,10 +1,9 @@
-// const mdLinks = require('../');
-
+// const mdLinks = require('../../src/index.js');
 
 // describe('mdLinks', () => {
 
-//   it('should...', () => {
-//     console.log('FIX ME!');
+//   it('Debería ser función', () => {
+//    expect(typeof mdLinks).toBe('object');
 //   });
 
 // });

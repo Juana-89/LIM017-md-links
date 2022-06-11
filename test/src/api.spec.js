@@ -1,6 +1,6 @@
 const {absolutePath, pathExists, isDirectory, isFile, extFile, readDir, readFile, joinTwoPaths,
        searchDirectoryWithFilesMD, searchLinksInFilesMD, getLinksStatus}  = require ('../../src/api.js');
-const fetch = jest.createMockFromModule('node-fetch');
+const fetch = jest.createMockFromModule('node-fetch').default;
 const routeFolder = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba';
 const routeFile = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md';
 const manyFiles = ['C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md',
@@ -138,22 +138,18 @@ describe('getLinksStatus', () => {
     });
 
     it('Valida estados rechazados de los links con getLinksStatus', () => {
-        fetch.mockImplementation(() => Promise.reject([{
+        fetch.mockImplementation(() => Promise.reject({
                 href: 'https://www.google.com/404', 
                 text: 'https://www.google.com/404',
                 file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba3.md',
                 status: 404,
                 message: 'Fail'
-            }]))
-            return getLinksStatus ([{
-                href: 'https://www.google.com/404', 
-                text: 'https://www.google.com/404',
-                file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba3.md',
-                status: 404,
-                message: 'Fail'
-
-            }])
+            }))
+            return getLinksStatus (
+                [ 'https://www.google.com/404']
+            )
          .then((data) => {
+             console.log(data.status + "aaaaaaaaaaaaaaaaa");
              expect(data).toEqual([mdLinksStatusFail])
          })   
     });
