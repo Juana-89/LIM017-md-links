@@ -23,7 +23,7 @@ if(args.length === 2){
     switch (args[1]) {
     case '--validate':
     mdLinks(args[0], { validate: true })
-    .then(result => result.forEach(element => console.log(`\nhref: ${element.href} \ntext: ${element.text} \nfile: ${eelement.file} \nstatus: ${element.status} \nmessage: ${element.message}`)))
+    .then(result => result.forEach(element => console.log(`\nhref: ${element.href} \ntext: ${element.text} \nfile: ${element.file} \nstatus: ${element.status} \nmessage: ${element.message}`)))
     .catch(error => console.log(error));
     break;
   
@@ -34,11 +34,11 @@ if(args.length === 2){
     break;
   
     case '--help':
-    console.log(`${option.help}`);
+    console.log(`${option.help.brightRed}`);
     break;
 
     case '--about':
-    console.log(`${option.about}`);
+    console.log(`${option.about.brightBlue}`);
     break;
   
     default: console.log('Sorry, the command you entered doesnt exist. Try the --help command to receive instructions');
@@ -49,8 +49,7 @@ if(args.length === 2){
 
   // Si el usuario pone 3 argumentos en la línea de comandos
   if(args.length === 3){
-    if ((args[1] === "--stats" && args[2] === "--validate") ||
-    (args[1] === "--validate" && args[2] === "--stats")) {
+    if ((args[1] === "--stats" && args[2] === "--validate") || (args[1] === "--validate" && args[2] === "--stats")) {
     mdLinks(args[0], { validate: true })
     .then(res=> console.log(`Total: ${option.totalLinks(res)} 
     Unique: ${option.uniqueLinks(res)}

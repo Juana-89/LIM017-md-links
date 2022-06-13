@@ -27,9 +27,9 @@ const mdLinks = (path, options) => {
     });
 }
 
-const result = mdLinks('../prueba2', { validate: true })
+const result = mdLinks('./prueba2', { validate: true })
 result
-.then((res)=> console.log(res))
-.catch((err) => console.log(err));
+// .then((res)=> console.log(res))
+// .catch((err) => console.log(err));
 
 module.exports= { mdLinks };

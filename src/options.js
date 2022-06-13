@@ -25,9 +25,10 @@ ________________________________________________________________________________
 You can place the following commands to have statistics of the links found in your md files:
 --validate: Show the link, text, route, status and status message.
 --stats: Show statistics about the links found such as unique links and unique links.
---stats --validate: Show total statistics of the number of links, unique links and broken links
-Use the next structure in the commands line: mdLinks <path> <command> but you want can only
-and it ill show you the link, text and the file where it is located`
+--stats --validate: Show total statistics of the number of links, unique links and broken 
+links Use the next structure in the commands line: mdLinks <path> <command> but you want can 
+only and it ill show you the link, text and the file where it is located.
+_____________________________________________________________________________________________`
 
 const about = `
 
@@ -49,17 +50,6 @@ const about = `
             check if the Mark down (md) files contain links and if they 
             work or not. Created by Juana LC, my repository:
             https://github.com/Juana-89/LIM017-md-links
-            ____________________________________________________________
-`
+            ____________________________________________________________`
 
-
-
-
-
-module.exports = {
-    totalLinks,
-    uniqueLinks,
-    brokenLinks,
-    help,
-    about
-  };
+module.exports = {totalLinks, uniqueLinks, brokenLinks, help, about};

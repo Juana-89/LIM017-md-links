@@ -145,11 +145,14 @@ describe('getLinksStatus', () => {
                 status: 404,
                 message: 'Fail'
             }))
-            return getLinksStatus (
-                [ 'https://www.google.com/404']
-            )
+            return getLinksStatus ([{
+                href: 'https://www.google.com/404', 
+                text: 'https://www.google.com/404',
+                file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba3.md',
+                status: 404,
+                message: 'Fail'
+            }])
          .then((data) => {
-             console.log(data.status + "aaaaaaaaaaaaaaaaa");
              expect(data).toEqual([mdLinksStatusFail])
          })   
     });

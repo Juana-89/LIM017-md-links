@@ -8,6 +8,9 @@
     "start": "node src/index.js",
     "test": "jest --coverage"
   },
+  "bin": {
+    "md-links": "./src/cli.js"
+  },
   "dependencies": {
     "@laboratoria/curriculum-parser": "github:Laboratoria/course-parser",
     "colors": "^1.4.0",
