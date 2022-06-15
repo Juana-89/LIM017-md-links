@@ -48,11 +48,6 @@ describe('pathExists', () => {
         console.log(pathExists('1111.js'))
     });
 
-    // it('Devuelve un archivo si existe', () => {
-    //     expect(pathExists('C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md')).toEqual(routeFile);
-    //     console.log(pathExists('prueba\\prueba.md'))
-    // });
-
 });
 
 describe('isDirectory', () => {
@@ -104,9 +99,6 @@ describe('searchDirectoryWithFilesMD', () => {
         expect(searchDirectoryWithFilesMD(routeFolder)).toEqual(manyFiles);
     });
 
-    // it('Retorna false al no encontrar archivos MD', () => {
-    //     expect(searchDirectoryWithFilesMD(fileNotMD)).toBe(false);
-    // });
 });
 
 describe('searchLinksInFilesMD', () => {
@@ -130,11 +122,8 @@ describe('getLinksStatus', () => {
                 file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba2.md',
                 status: 200,
                 message: 'Ok'
-
             }])
-         .then((data) => {
-             expect(data).toEqual([mdLinksStatusOk])
-         })   
+         .then((data) => {expect(data).toEqual([mdLinksStatusOk])})   
     });
 
     it('Valida estados rechazados de los links con getLinksStatus', () => {
@@ -152,8 +141,7 @@ describe('getLinksStatus', () => {
                 status: 404,
                 message: 'Fail'
             }])
-         .then((data) => {
-             expect(data).toEqual([mdLinksStatusFail])
+         .then((data) => {expect(data).toEqual([mdLinksStatusFail])
          })   
     });
 });

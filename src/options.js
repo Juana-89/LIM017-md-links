@@ -9,7 +9,7 @@ const uniqueLinks = (arrayLinks) => {
 };
 //Obtener los links rotos dentro de la lista del array que fueron encontrados en el path
 const brokenLinks = (arrayLinks) => {
-    const broken = arrayLinks.filter((e)=> e.message=== 'fail');
+    const broken = arrayLinks.filter((e)=> e.message=== 'Fail');
     return broken.length;
 };
 
