@@ -6,19 +6,19 @@ const colors = require('colors');
 colors.enable();
 const [, , ...args] = process.argv;
 
-// Si el usuario no escribe ruta a validar
+// Si el usuario no ingresa ruta a validar(md-links)
 if(args.length === 0) {
     console.error('Enter the path of the file');
   }
 
-// Si el usuario pone un argumento en la línea de comandos
+// Si el usuario pone un argumento en la línea de comandos(md-links ./prueba3.md)
 if(args.length === 1){
     mdLinks(args[0], { validate:false })
     .then(result => result.forEach(element=> console.log(`\nhref: ${element.href}\ntext: ${element.text}\nfile: ${element.file}\n`)))
     .catch(error => console.log(error));
 }
 
-// Si el usuario pone 2 argumentos en la línea de comandos
+// Si el usuario pone 2 argumentos en la línea de comandos (md-links ./prueba3.md --option)
 if(args.length === 2){
     switch (args[1]) {
     case '--validate':
