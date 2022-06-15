@@ -1,18 +1,19 @@
 const { absolutePath, pathExists, searchDirectoryWithFilesMD, searchLinksInFilesMD, getLinksStatus } = require('./api.js')
 const mdLinks = (path, options) => {
     return new Promise ((resolve, reject) => {
-        const route = absolutePath(path)
+        const route = absolutePath(path);
+        console.log(route)
         if(!pathExists(route)){
-        reject('No existe ubicación');
+        reject('Path no exists');
         }else{
                 const validateMdFile= searchDirectoryWithFilesMD(route);
                 if (validateMdFile.length === 0 ){
-                reject('No hay archivos MD')
+                reject('There are not files MD')
                 }else{
 
                 const linksResult = searchLinksInFilesMD(route);
                 if(linksResult.length === 0){
-                reject('No hay links')
+                reject('There are not links')
                 }else{
 
                 if(!(options.validate)){
@@ -27,9 +28,9 @@ const mdLinks = (path, options) => {
     });
 }
 
-const result = mdLinks('../prueba2', { validate: true })
-result
-.then((res)=> console.log(res))
-.catch((err) => console.log(err));
+// const result = mdLinks('./prueba2', { validate: true })
+// result
+// .then((res)=> console.log(res))
+// .catch((err) => console.log(err));
 
 module.exports= { mdLinks };

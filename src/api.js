@@ -9,8 +9,8 @@ const absolutePath = (route) => (path.isAbsolute(route)) ? route : path.resolve(
 //console.log('Convirtiendo a una ruta absoluta con "absolutePath"' + absolutePath('./prueba/prueba'));
 
 // Saber si una ruta existe
-const pathExists = (route) => fs.existsSync(route) ? route : 'Path no exists';
-//console.log('¿Existe la ruta? ' + pathExists('1111.js'))
+const pathExists = (route) => fs.existsSync(route)
+//console.log('¿Existe la ruta? ' + pathExists('1111.js') ? route : 'Path no exists';)
 
 // Saber si es un directorio
 const isDirectory = (route) => fs.statSync(route).isDirectory();
@@ -44,11 +44,11 @@ const searchDirectoryWithFilesMD = (route) => {
         arrayFilesMD = arrayFilesMD.concat(filesMD)
     });
     }
-    else{
-        console.log('No exists directory or not contain MD files')
-        return false
+    // else{
+    //     console.log('No exists directory or not contain MD files')
+    //     return false
         
-        }
+    //     }
     return arrayFilesMD
     };
 //console.log(searchDirectoryWithFilesMD('./index.js'))//devuelve un array vacio si no es md
@@ -80,11 +80,11 @@ const getLinksStatus = (links) => {
     .then((response) => {
            element.status = response.status,
            element.message = (response.status >= 200) && (response.status <= 399) ? 'Ok' : 'Fail';
-            return element;
+           return element;
           
         })
     .catch((error) => {
-        return {
+            return {
             href: element.href,
             text: element.text,
             file: element.file,

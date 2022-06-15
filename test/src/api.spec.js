@@ -1,12 +1,12 @@
 const {absolutePath, pathExists, isDirectory, isFile, extFile, readDir, readFile, joinTwoPaths,
        searchDirectoryWithFilesMD, searchLinksInFilesMD, getLinksStatus}  = require ('../../src/api.js');
-const fetch = jest.createMockFromModule('node-fetch');
+const fetch = jest.createMockFromModule('node-fetch').default;
 const routeFolder = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba';
 const routeFile = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md';
 const manyFiles = ['C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md',
 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba1.md',
 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba2.md'];
-const fileNotMD = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\test\\src\\api.spec.js';
+//const fileNotMD = 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\test\\src\\api.spec.js';
 const files = ['prueba.md', 'prueba1.md','prueba2.md'];
 const readText = "agregando cosas";
 const mdLinks = 
@@ -44,13 +44,8 @@ describe('absolutePath', () => {
 
 describe('pathExists', () => {
     it('Corrobora si una ruta existe', () => {
-        expect(pathExists('1111.js')).toBe("Path no exists");
+        expect(pathExists('1111.js')).toBe(false);
         console.log(pathExists('1111.js'))
-    });
-
-    it('Devuelve un archivo si existe', () => {
-        expect(pathExists('C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba.md')).toEqual(routeFile);
-        console.log(pathExists('prueba\\prueba.md'))
     });
 
 });
@@ -104,9 +99,6 @@ describe('searchDirectoryWithFilesMD', () => {
         expect(searchDirectoryWithFilesMD(routeFolder)).toEqual(manyFiles);
     });
 
-    it('Retorna false al no encontrar archivos MD', () => {
-        expect(searchDirectoryWithFilesMD(fileNotMD)).toBe(false);
-    });
 });
 
 describe('searchLinksInFilesMD', () => {
@@ -130,31 +122,26 @@ describe('getLinksStatus', () => {
                 file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba\\prueba2.md',
                 status: 200,
                 message: 'Ok'
-
             }])
-         .then((data) => {
-             expect(data).toEqual([mdLinksStatusOk])
-         })   
+         .then((data) => {expect(data).toEqual([mdLinksStatusOk])})   
     });
 
     it('Valida estados rechazados de los links con getLinksStatus', () => {
-        fetch.mockImplementation(() => Promise.reject([{
+        fetch.mockImplementation(() => Promise.reject({
                 href: 'https://www.google.com/404', 
                 text: 'https://www.google.com/404',
                 file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba3.md',
                 status: 404,
                 message: 'Fail'
-            }]))
+            }))
             return getLinksStatus ([{
                 href: 'https://www.google.com/404', 
                 text: 'https://www.google.com/404',
                 file: 'C:\\Users\\USER\\Desktop\\LIM017-md-links\\prueba3.md',
                 status: 404,
                 message: 'Fail'
-
             }])
-         .then((data) => {
-             expect(data).toEqual([mdLinksStatusFail])
+         .then((data) => {expect(data).toEqual([mdLinksStatusFail])
          })   
     });
 });
