@@ -2,18 +2,17 @@ const { absolutePath, pathExists, searchDirectoryWithFilesMD, searchLinksInFiles
 const mdLinks = (path, options) => {
     return new Promise ((resolve, reject) => {
         const route = absolutePath(path);
-        console.log(route)
         if(!pathExists(route)){
-        reject('Path no exists');
+        reject('Path no exists'.bold.brightRed);
         }else{
                 const validateMdFile= searchDirectoryWithFilesMD(route);
                 if (validateMdFile.length === 0 ){
-                reject('There are not files MD')
+                reject('There are not files MD'.bold.brightRed)
                 }else{
 
                 const linksResult = searchLinksInFilesMD(route);
                 if(linksResult.length === 0){
-                reject('There are not links')
+                reject('There are not links'.bold.brightRed)
                 }else{
 
                 if(!(options.validate)){
