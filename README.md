@@ -23,7 +23,7 @@
 
 ## 2. Planificación del proyecto
 
-<p align= "justify">Se realizó por GitHub Proyect mediante milestones e issues para la organización y planificación de tareas y actividades. Asimismo, también están los enlaces de las herramientas que ayudaron al desarrollo de este proyecto para compartirlo con quién desee informarse de esa documentación.
+<p align= "justify">Se realizó por GitHub Projects mediante milestones e issues para la organización y planificación de tareas y actividades. Asimismo, también están los enlaces de las herramientas que ayudaron al desarrollo de este proyecto para compartirlo con quién desee informarse de esa documentación.
 </p>
 <p align= "center">
 <img src="./img/milestones.jpg" width="700" height="500"></a>
