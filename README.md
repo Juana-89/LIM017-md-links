@@ -13,7 +13,7 @@
 <p align= "center"><img src="./img/logo.png" width="500" height="300">
 
 ## 1. Descripción
-***
+
 <p align= "justify">MD-Links es una librería de línea de comandos realizada en JavaScript que te ayudará a obtener links de archivos MD y los enlistará de manera ordenada mostrando su ubicación, estado, descripción y estadísticas de los funcionalidad de estos.</p>
 
 **¿Para qué puede servir?**
@@ -22,7 +22,7 @@
 </p>
 
 ## 2. Planificación del proyecto
-***
+
 <p align= "justify">Se realizó por GitHub Proyect mediante milestones e issues para la organización y planificación de tareas y actividades. Asimismo, también están los enlaces de las herramientas que ayudaron al desarrollo de este proyecto para compartirlo con quién desee informarse de esa documentación.
 </p>
 <p align= "center">
@@ -30,7 +30,7 @@
 </p>
 
 ## 3. Flujograma de actividades
-***
+
 Se desarrolló a través de diagramas de flujo los procesos del API y CLI que competen para la realización del proyecto. 
 <p align= "center">
 <img src="./flowcharts/API Diagrama_de_flujo.drawio.png" width="700" height="500">
@@ -38,7 +38,7 @@ Se desarrolló a través de diagramas de flujo los procesos del API y CLI que co
 </p>
 
 ## 4. Instrucciones de uso
-***
+
 En esta sección te brindaré la información de cómo puedes instalar esta libreria para que poder usarla. Las rutas que ingresas puede ser [relativa](https://desktop.arcgis.com/es/arcmap/10.5/tools/supplement/pathnames-explained-absolute-relative-unc-and-url.htm#:~:text=Una%20ruta%20relativa%20hace%20referencia,para%20subir%20en%20la%20jerarqu%C3%ADa.) como [absoluta](https://desktop.arcgis.com/es/arcmap/10.5/tools/supplement/pathnames-explained-absolute-relative-unc-and-url.htm#:~:text=Una%20ruta%20relativa%20hace%20referencia,para%20subir%20en%20la%20jerarqu%C3%ADa.). 
 
 **Instalación**
@@ -192,7 +192,7 @@ $ md-links ./prueba2/doc.md --about
 ```
 
 ## 5. Aviso de errores
-***
+
 Si ingresas erróneamente la ruta de un directorio o archivo que no existe, la línea de comandos te retornará el siguiente mensaje de error:
 
 ```js
@@ -215,7 +215,7 @@ There are not links
 ```
 
 ## 6. Herramientas usadas
-***
+
 <a href="https://nodejs.org/es/"><li>Node.js</li></a>
 <a href="https://nodejs.org/dist/latest-v17.x/docs/api/fs.html#file-system"><li>FS</li></a>
 <a href="https://nodejs.org/dist/latest-v17.x/docs/api/path.html"><li>Path module</li></a>
@@ -225,6 +225,6 @@ There are not links
 <a href="https://www.npmjs.com"><li>Npm</li></a>
 
 ## Autora
-***
+
 [@jllanjech](https://github.com/Juana-89/LIM017-md-links)
 
