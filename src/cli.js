@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Te ayuda a convertir este archivo en un linea de comandos de node js
 const { mdLinks } = require('./index');
-const option = require('./options');
+const option = require('./stats');
 const colors = require('colors');
 colors.enable();
 const [, , ...args] = process.argv;
